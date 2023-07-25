@@ -1,0 +1,28 @@
+{
+  "name": "numerical-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "@heroicons/react": "^2.0.13",
+    "@prisma/client": "^4.11.0",
+    "next": "^12.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sharp": "^0.32.1",
+    "sib-api-v3-sdk": "^8.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "prisma": "^4.11.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "4.9.4"
+  }
+}
