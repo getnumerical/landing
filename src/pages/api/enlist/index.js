@@ -6,7 +6,7 @@ const apiKey = defaultClient.authentications['api-key'];
 apiKey.apiKey = process.env.NEXT_PUBLIC_SIB_KEY;
 const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
-export default async function handler(
+export default async function POST(
   req, res
 ) {
   const {email} = req.body;
