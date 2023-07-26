@@ -4,7 +4,6 @@ import GeneralLayout from '@/layout/layout'
 import Image from 'next/future/image'
 import Loader from '@/components/loader'
 import PrivacyModal from '@/components/modal/modals/privacy'
-import { toast } from "react-hot-toast";
 
 
 
@@ -37,6 +36,8 @@ const Index = () => {
   const [openPrivacy, setOpenPrivacy] = useState(false)
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("")
   const [isLoading, setIsLoading] = useState(false);
 
 
@@ -60,19 +61,29 @@ const Index = () => {
         })
       })
       if (res.status === 200){
-        toast.success("Congratulations! Email added successfully")
+        setSuccessMsg("Congratulations! Email added successfully")
+        setTimeout(() => {
+          setSuccessMsg(false);
+         }, 3000); 
       }
       if (res.status === 400) {
-        toast.error("Email already waitlisted")
+        setErrorMsg("Email already waitlisted")
+        setTimeout(() => {
+          setErrorMsg(false);
+         }, 3000); 
       }
       if (res.status === 500) {
-        toast.error("Server error, Please try again later")
+        setErrorMsg("Server error, Please try again later")
+        setTimeout(() => {
+          setErrorMsg(false);
+         }, 3000); 
       }
       setIsLoading(false)
       setEmail('');
       setError(false);
     }
   };
+ 
 
   return (
     <>
@@ -98,6 +109,10 @@ const Index = () => {
               Be one of our first users by getting notified when we launch
               </p>
             </div>
+            {
+              errorMsg && <p className='text-red-500 text-center text-sm'>{errorMsg}</p>
+            }
+            { <p className='text-center text-sm text-teal-500'>{successMsg}</p>}
             <div className='flex justify-center mt-2 px-4'>
             <div className='relative md:w-4/12'>
             <form noValidate>
