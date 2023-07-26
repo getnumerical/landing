@@ -86,7 +86,7 @@ const Index = () => {
       <div className='relative overflow-auto flex content-center items-center justify-center'>
         <div className='container relative mx-auto'>
           <div className='items-center'>
-            <div className='mt-24 ml-auto mr-auto w-full px-4 text-center lg:w-8/12'>
+            <div className='mt-14 ml-auto mr-auto w-full px-4 text-center lg:w-8/12'>
               <h4 className='text-white'>Our application is</h4>
               <h1 className='text-7xl font-semibold 
               leading-tight bg-gradient-to-tr
@@ -134,7 +134,7 @@ const Index = () => {
                 ''
               )}
                 </div>
-                <div className='flex justify-center space-x-4 my-6'>
+                <div className='flex justify-center space-x-4 my-4'>
                 {socials.map((val) => (
                   <a key={val.name} href={val.path}>
                     <Image src={val.img} alt={val.name} width={30} height={30} />
