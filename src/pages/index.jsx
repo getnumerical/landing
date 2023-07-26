@@ -26,7 +26,7 @@ const socials = [
   },
   {
     name: "instagram",
-    path: "https://www.instagram.com/",
+    path: "https://www.instagram.com/Getnumerical",
     img: "/instagram.svg"
   }
 ]

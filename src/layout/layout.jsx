@@ -36,14 +36,14 @@ const [open, setOpen] = useState(false)
                   </a>
                 </Link>
               </div>
-              <div className='hidden sm:block py-4'>
+              <div className='py-4'>
                 <nav className='flex space-x-4 whitespace-nowrap'>
                   <p onClick={() => setOpen(!open)}
                     className='flex items-center text-sm font-medium text-[#141629] hover:cursor-pointer hover:underline'>
                     About us
                   </p>
                   <a href='mailto:contact@getnumerical.com'
-                    className='flex items-center text-sm font-medium text-[#141629] hover:cursor-pointer hover:underline'>
+                    className='hidden sm:block items-center text-sm font-medium text-[#141629] hover:cursor-pointer hover:underline'>
                     Contact
                   </a>
                 </nav>
@@ -55,11 +55,9 @@ const [open, setOpen] = useState(false)
           <main>
             <div className='py-2'>{children}</div>
           </main>
-          <div className='bottom-0'>
-            <div className='mx-auto flex justify-center'>
-                  <Image src="/numerical.png" priority alt="numerical" width={700} height={700} />
+            <div className='bottom-0 absolute right-0 left-0'>
+                  <Image className='text-center mx-auto' src="/numerical.webp" priority alt="numerical" width={700} height={700} />
             </div>
-                </div>
         </div>
         <AboutModal
         openModal={open}
