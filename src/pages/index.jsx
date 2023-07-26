@@ -4,6 +4,7 @@ import GeneralLayout from '@/layout/layout'
 import Image from 'next/future/image'
 import Loader from '@/components/loader'
 import PrivacyModal from '@/components/modal/modals/privacy'
+import { toast } from "react-hot-toast";
 
 
 
@@ -36,8 +37,6 @@ const Index = () => {
   const [openPrivacy, setOpenPrivacy] = useState(false)
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
-  const [successMsg, setSuccessMsg] = useState("");
-  const [errorMsg, setErrorMsg] = useState("")
   const [isLoading, setIsLoading] = useState(false);
 
 
@@ -61,15 +60,14 @@ const Index = () => {
         })
       })
       if (res.status === 200){
-        setSuccessMsg("Congratulations! Email added successfully")
+        toast.success("Congratulations! Email added successfully")
       }
       if (res.status === 400) {
-        setErrorMsg("Email already waitlisted")
+        toast.error("Email already waitlisted")
       }
       if (res.status === 500) {
-        setErrorMsg("Server error, Please try again later")
+        toast.error("Server error, Please try again later")
       }
-      console.log('email submitted successfully', email, res);
       setIsLoading(false)
       setEmail('');
       setError(false);
@@ -100,11 +98,6 @@ const Index = () => {
               Be one of our first users by getting notified when we launch
               </p>
             </div>
-            {
-
-            }
-            <p className='text-center text-sm text-teal-500'>{successMsg}</p>
-            <p className='text-center text-sm text-red-500'>{errorMsg}</p>
             <div className='flex justify-center mt-2 px-4'>
             <div className='relative md:w-4/12'>
             <form noValidate>
@@ -142,7 +135,6 @@ const Index = () => {
                 ))}
                 </div>
                 <div className='flex justify-center'>
-
                 <button onClick={() => setOpenPrivacy(!openPrivacy)} className='py-4 text-white hover:text-gray-400'>Privacy Policy</button>
                 </div>
           </div>

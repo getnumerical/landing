@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import '../styles/tailwind.css'
 
 
@@ -6,6 +7,9 @@ export default function App({
   pageProps: { ...pageProps }
 }) {
   return (
+    <>
     <Component {...pageProps} />
+    <Toaster position="top-center" gutter={8} />
+    </>
   )
 }

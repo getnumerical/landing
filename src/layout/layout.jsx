@@ -56,7 +56,7 @@ const [open, setOpen] = useState(false)
             <div className='py-2'>{children}</div>
           </main>
             <div className='bottom-0 absolute right-0 left-0'>
-                  <Image className='text-center mx-auto' src="/numerical.webp" priority alt="numerical" width={600} height={700} />
+                  <Image className='text-center mx-auto' src="/numerical.webp" priority alt="numerical" width={600} height={650} />
             </div>
         </div>
         <AboutModal
