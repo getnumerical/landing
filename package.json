@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,7 +16,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.32.1",
-    "sib-api-v3-sdk": "^8.5.0"
+    "dayjs": "^1.11.7",
+    "sib-api-v3-sdk": "^8.5.0",
+    "swr": "^2.2.0",
+    "unfetch": "^4.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
