@@ -11,7 +11,7 @@ const Index = () => {
 
     const router = useRouter()
     const {slug} = router.query
-    const [currentPage, setCurrentPage] = useState(2)
+    const [currentPage, setCurrentPage] = useState(1)
     const fetcher = url => fetch(url).then(r => r.json())
     const { data, error } = useSWR(`/api/waitlist?page=${currentPage}&limit=${PAGE_SIZE}`, fetcher)
     const totalPages = Math.ceil(data?.count / PAGE_SIZE)
